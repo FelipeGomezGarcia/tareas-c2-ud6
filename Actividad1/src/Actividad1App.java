@@ -43,6 +43,7 @@ public class Actividad1App {
 		double base = sc.nextDouble();
 		System.out.println("Indica la altura");
 		double altura = sc.nextDouble();
+		sc.close();
 		
 		double area = (base * altura) /2;
 		
@@ -54,6 +55,7 @@ public class Actividad1App {
 		
 		System.out.println("Indica el lado");
 		double lado = sc.nextDouble();
+		sc.close();
 		
 		double area = lado * lado;
 		
