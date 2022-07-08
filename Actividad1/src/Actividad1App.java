@@ -8,15 +8,19 @@ public class Actividad1App {
 		System.out.println("(CIRCULO, TRIANGULO, CUADRADO)");
 		String figura = sc.next();
 		
+		double area;
 		switch (figura.toUpperCase()) {
 		case "CIRCULO":
-			circulo(sc);
+			area = circulo(sc);
+			System.out.println("El area es " + area + " m2");
 			break;
 		case "TRIANGULO":
-			triangulo(sc);
+			area = triangulo(sc);
+			System.out.println("El area es " + area + " m2");
 			break;
 		case "CUADRADO":
-			cuadrado(sc);
+			area = cuadrado(sc);
+			System.out.println("El area es " + area + " m2");
 			break;
 		default:
 			System.out.println("Esa figura no esta en la lista");
@@ -24,7 +28,7 @@ public class Actividad1App {
 		}
 	}
 	
-	public static void circulo (Scanner sc) {
+	public static double circulo (Scanner sc) {
 		final double PI = Math.PI;
 		
 		System.out.println("Indica el radio");
@@ -33,11 +37,11 @@ public class Actividad1App {
 		
 		double area = Math.pow(radio, 2) * PI;
 		
-		System.out.println("El area del circulo es " + area + " m2");
+		return area;
 		
 	}
 	
-	public static void triangulo (Scanner sc) {
+	public static double triangulo (Scanner sc) {
 		
 		System.out.println("Indica la base");
 		double base = sc.nextDouble();
@@ -47,11 +51,11 @@ public class Actividad1App {
 		
 		double area = (base * altura) /2;
 		
-		System.out.println("El area del triangulo es " + area + " m2");
+		return area;
 		
 	}
 	
-	public static void cuadrado (Scanner sc) {
+	public static double cuadrado (Scanner sc) {
 		
 		System.out.println("Indica el lado");
 		double lado = sc.nextDouble();
@@ -59,6 +63,6 @@ public class Actividad1App {
 		
 		double area = lado * lado;
 		
-		System.out.println("El area del cuadrado es " + area + " m2");
+		return area;
 	}
 }
