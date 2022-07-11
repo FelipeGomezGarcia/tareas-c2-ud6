@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Actividad12App {
@@ -13,7 +14,7 @@ public class Actividad12App {
 		
 		int lista1[] = rellenarLista(tamaño);
 		if (n1 < 10 && n1 >= 0) {
-			int lista2[] = listaFiltrada(lista1, n1);
+			ArrayList<Integer> lista2 = listaFiltrada(lista1, n1);
 			imprimir(lista2);
 		}else {
 			System.out.println("El numero introducido no es un digito");
@@ -33,30 +34,25 @@ public class Actividad12App {
 		return nums;
 	}
 	
-	public static int[] listaFiltrada(int lista[], int num) {
+	public static ArrayList<Integer> listaFiltrada(int lista[], int num) {
 		
-		int filtrada[] = new int [lista.length];
+		ArrayList<Integer> filtrada = new ArrayList<Integer>();
 		int ultimoNum= 0;
-		int x = 0;
 		
 		for (int i = 0; i < lista.length; i++) {
 			ultimoNum = lista[i];
 			if (ultimoNum%10 == num) {
-				filtrada[x] = lista[i];
-				x++;
+				filtrada.add(lista[i]);
 			}
 		}
 		
 		return filtrada;
 	}
 	
-	public static void imprimir (int lista[]) {
+	public static void imprimir (ArrayList<Integer> lista) {
 		
-		for (int i = 0; i < lista.length; i++) {
-			if (lista[i] > 0) {
-				System.out.println(lista[i]);
-			}
-			
+		for (int i = 0; i < lista.size(); i++) {
+			System.out.println(lista.get(i));	
 		}
 		
 	}
